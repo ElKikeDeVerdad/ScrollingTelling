@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
                     Box(modifier = Modifier
                         .fillMaxSize()
                         .padding(innerPadding)) {
-                        FuncionParallaxIncifor(modifier = Modifier.fillMaxSize())
+                        FuncionParallaxIncifor()
                     }
                 }
             }

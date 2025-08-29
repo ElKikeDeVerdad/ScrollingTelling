@@ -1,7 +1,35 @@
 <resources>
     <string name="app_name">ScrollingTellingINCIFOR</string>
+    INCIFOR
 
-    <string name="texto_Item1">El Instituto de Ciencias Forenses y Criminológicas “Luís Concheiro” (INCIFOR) desarrolla funciones docentes y de investigación en las áreas de Medicina Legal, Toxicología y Criminología, así como de asesoramiento a la Administración de Justicia. Además, ofrece una amplia cartera de servicios que están a disposición tanto de organismos públicos como privados.</string>
+    Titulos INCIFOR
+    <string name="Incifor_titulo_Item2"></string>
+
+    Textos INCIFOR
+    <string name="Incifor_texto_Item1">El Instituto de Ciencias Forenses y Criminológicas “Luís Concheiro”  (&lt;inciforNegrita&gt;INCIFOR&lt;/inciforNegrita&gt;) desarrolla funciones docentes y de investigación en las áreas de Medicina Legal, Toxicología y Criminología, así como de asesoramiento a la Administración de Justicia. Además, ofrece una amplia cartera de servicios que están a disposición tanto de &lt;inciforNegrita&gt;organismos públicos como privados.&lt;/inciforNegrita&gt;</string>
+    <string name="Incifor_texto_Item2">Con sede en &lt;inciforNegrita&gt;Santiago de Compostela&lt;/inciforNegrita&gt;, el Instituto de Ciencias Forenses y Criminológicas "Luis Concheiro" (INCIFOR) (previamente Instituto de Medicina Legal), es una institución de carácter mixto de referencia internacional en el ámbito de la Medicina Legal, la Toxicología y la Genética Forense. </string>
+    <string name="Incifor_texto1_Item3">Fue creado por el Decreto (gallego) 247/1992, de &lt;inciforNegrita&gt;30 de julio&lt;/inciforNegrita&gt;, tras el convenio entre la Universidade de Santiago de Compostela (USC) y la Xunta de Galicia, si bien lleva realizando labores de investigación y servicios &lt;inciforNegrita&gt;desde 1978&lt;/inciforNegrita&gt;. Desde 2025 cuenta con la &lt;inciforNegrita&gt;Unidad de Criminología&lt;/inciforNegrita&gt; fruto de la integración del que fuera hasta ese momento Instituto de Criminología de la USC, promotor y coordinador del título propio de Criminología, ahora Grado de Criminología.</string>
+    <string name="Incifor_texto2_Item3">Inicio de actividad</string>
+    <string name="Incifor_texto3_Item3">Creación oficial</string>
+    <string name="Incifor_texto4_Item3">Integración de Criminología</string>
+    Numeraciones INCIFOR
+    <string name="Incifor_numero1_Item3">1978</string>
+    <string name="Incifor_numero2_Item3">1992</string>
+    <string name="Incifor_numero3_Item3">2025</string>
+
+    IGFAE
+    Titulos IGFAE
+    <string name="IGFAE_titulo_Item1"></string>
+    <string name="IGFAE_titulo_Item2"></string>
+    <string name="IGFAE_titulo_Item3"></string>
+
+    Textos IGFAE
+    <string name="Igfae_texto_Item1"></string>
+    <string name="Igfae_texto_Item2"></string>
+    <string name="Igfae_texto_Item3"></string>
+
+    Numeraciones IGFAE
+    <string name="IGFAE_numero1_Item3"></string>
 
 
 </resources>

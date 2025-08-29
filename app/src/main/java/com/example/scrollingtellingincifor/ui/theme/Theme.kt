@@ -14,6 +14,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.example.scrollingtellingincifor.R
@@ -43,7 +44,7 @@ val Roboto = FontFamily(
 
 
 val AppTipografia = Typography(
-    bodyLarge = TextStyle(
+    bodyMedium = TextStyle(
         fontFamily = Roboto,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
@@ -52,7 +53,13 @@ val AppTipografia = Typography(
         fontFamily = MerriWeather,
         fontWeight = FontWeight.Bold,
         fontSize = 22.sp
+    ),
+    titleSmall = TextStyle(
+        fontFamily = MerriWeather,
+        fontWeight = FontWeight.Bold,
+        fontStyle = FontStyle.Italic
     )
+
 )
 
 @Composable
