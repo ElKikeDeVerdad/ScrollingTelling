@@ -1,4 +1,4 @@
-package com.example.scrollingtellingincifor.INCIFOR.Helpers.Data
+package com.example.scrollingtellingincifor.utils
 
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.Color

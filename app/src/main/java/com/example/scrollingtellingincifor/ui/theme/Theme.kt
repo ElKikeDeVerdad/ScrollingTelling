@@ -1,6 +1,5 @@
-package com.example.scrollingtellingincifor.ui.theme
+package com.example.scrollingtellingincifor.ui.theme.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -49,17 +48,11 @@ val AppTipografia = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
     ),
-    titleLarge = TextStyle(
+    titleMedium = TextStyle(
         fontFamily = MerriWeather,
         fontWeight = FontWeight.Bold,
-        fontSize = 22.sp
-    ),
-    titleSmall = TextStyle(
-        fontFamily = MerriWeather,
-        fontWeight = FontWeight.Bold,
-        fontStyle = FontStyle.Italic
+        fontSize = 24.sp
     )
-
 )
 
 @Composable

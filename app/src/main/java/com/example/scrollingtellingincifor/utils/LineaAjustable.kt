@@ -1,4 +1,4 @@
-package com.example.scrollingtellingincifor.INCIFOR.Helpers
+package com.example.scrollingtellingincifor.utils
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -10,77 +10,57 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.example.scrollingtellingincifor.INCIFOR.Helpers.Data.NumerosTextosLinea
-import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.sp
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun LineaAjustable(
-    alturaPantalla: Dp,
-    anchoPantalla: Dp,
-    listaItems: List<NumerosTextosLinea>,
-
-    distanciaLinea: Float = 0.05f,
-    distanciaCirculos: Float = 0.1f,
-    offSetTextosX: Float = 0.15f,
-
+    listaItems: List<NumerosTextosLinea> = emptyList(),
     posicionDerecha: Boolean = true,
     textoIzquierda: Boolean = true,
+    offSetTextosY: Float = 0f, // offset vertical
+    distanciaLinea: Float = 0.05f,
+    distanciaCirculos: Float = 0.1f,
     espacioEntreCirculos: Float = 0.15f,
+    anchoTextosFraction: Float = 0.22f,
     tamañoCirculos: Float = 0.08f,
     grosorLineaFraction: Float = 0.03f,
-
-    offSetTextosY: Float = 0f
+    borderFraction: Float = 0.005f
 ) {
-    val tamañoCirculo = anchoPantalla * tamañoCirculos
-    val grosorLinea = anchoPantalla * grosorLineaFraction
-    val espacio = alturaPantalla * espacioEntreCirculos
+    BoxWithConstraints(modifier = Modifier.fillMaxWidth()) {
+        val ancho = this@BoxWithConstraints.maxWidth
+        val alto = this@BoxWithConstraints.maxHeight
 
-    // Ancho fijo para todos los textos, igual para todas las filas
-    val anchoTextos = anchoPantalla * 0.22f
-
-    Box(
-        modifier = Modifier
-            .fillMaxHeight()
-            .fillMaxWidth()
-    ) {
         // Línea vertical
         Box(
             modifier = Modifier
-                .width(grosorLinea)
+                .width(ancho * grosorLineaFraction)
                 .fillMaxHeight()
                 .background(Color.White)
                 .align(if (posicionDerecha) Alignment.CenterEnd else Alignment.CenterStart)
                 .offset(
-                    x = if (posicionDerecha) -anchoPantalla * distanciaLinea
-                    else anchoPantalla * distanciaLinea
+                    x = if (posicionDerecha) -ancho * distanciaLinea else ancho * distanciaLinea
                 )
         )
 
+        // Column con items
         Column(
             modifier = Modifier
-                .fillMaxHeight()
                 .align(if (posicionDerecha) Alignment.CenterEnd else Alignment.CenterStart)
                 .offset(
-                    x = if (posicionDerecha) -anchoPantalla * distanciaCirculos
-                    else anchoPantalla * distanciaCirculos,
-                    y = alturaPantalla * offSetTextosY
+                    x = if (posicionDerecha) -ancho * distanciaCirculos else ancho * distanciaCirculos,
+                    y = alto * offSetTextosY
                 ),
-            verticalArrangement = Arrangement.spacedBy(espacio),
+            verticalArrangement = Arrangement.spacedBy(alto * espacioEntreCirculos),
             horizontalAlignment = Alignment.Start
         ) {
             listaItems.forEach { item ->
-                Row(
-                    verticalAlignment = Alignment.Top
-                ) {
+                Row(verticalAlignment = Alignment.Top) {
                     if (textoIzquierda) {
-                        // Columna de texto con ancho fijo
                         Column(
                             horizontalAlignment = Alignment.Start,
-                            modifier = Modifier.width(anchoTextos)
+                            modifier = Modifier.width(ancho * anchoTextosFraction)
                         ) {
                             Text(
                                 text = stringResource(id = item.numeroRes),
@@ -98,36 +78,33 @@ fun LineaAjustable(
 
                         Spacer(modifier = Modifier.width(8.dp))
 
-                        // Círculo
                         Box(
                             modifier = Modifier
-                                .size(tamañoCirculo)
+                                .size(ancho * tamañoCirculos)
                                 .border(
-                                    width = (anchoPantalla * 0.005f),
+                                    width = ancho * borderFraction,
                                     color = Color.Black,
                                     shape = CircleShape
                                 )
                                 .background(item.color, CircleShape)
                         )
                     } else {
-                        // Círculo primero
                         Box(
                             modifier = Modifier
-                                .size(tamañoCirculo)
+                                .size(ancho * tamañoCirculos)
                                 .border(
-                                    width = (anchoPantalla * 0.005f),
+                                    width = ancho * borderFraction,
                                     color = Color.Black,
                                     shape = CircleShape
                                 )
-                                    .background(item.color, CircleShape)
+                                .background(item.color, CircleShape)
                         )
 
                         Spacer(modifier = Modifier.width(8.dp))
 
-                        // Columna de texto con ancho fijo
                         Column(
                             horizontalAlignment = Alignment.Start,
-                            modifier = Modifier.width(anchoTextos)
+                            modifier = Modifier.width(ancho * anchoTextosFraction)
                         ) {
                             Text(
                                 text = stringResource(id = item.numeroRes),
