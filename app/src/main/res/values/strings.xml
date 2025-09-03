@@ -5,8 +5,10 @@
 
     INCIFOR
     <string name="II_Incifor_miniscreen0_paragraph_0">El ADN de todos los seres humanos es igual en un 99,6%, pero la información contenida en ese 0,4% único es fundamental para obtener respuestas importantes. En España se han recuperado cerca de 9000 cuerpos de las más de 700 fosas comunes excavadas. Las labores de identificación de los restos, llevadas a cabo a través de genealogía genética, son fundamentales para poder dar descanso a las familias de los desaparecidos.</string>
-    <string name="texto_buscado">recuperado cerca de 9000 cuerpos de las más de 700 fosas comunes excavadas</string>
     <string name="II_Incifor_miniscreen0_paragraph_1">Entre un 30 y un 50% de los accidentes mortales de tráfico involucran a individuos que conducían bajo los efectos del alcohol. En estos casos es muy importante determinar si las acciones de una persona estaban influidas por la presencia de drogas en su organismo.</string>
+
+
+    ContentDescription
 
 
 </resources>

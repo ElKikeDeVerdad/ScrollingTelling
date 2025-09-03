@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            ScrollingTellingINCIFORTheme {
+            /*ScrollingTellingINCIFORTheme {
                 val listState = rememberLazyListState() // <-- Crear el estado de la lista
                 Scaffold { innerPadding ->
                     Box(
@@ -29,7 +29,8 @@ class MainActivity : ComponentActivity() {
                         InciforScreen(listState = listState) // <-- Pasar el estado
                     }
                 }
-            }
+            }*/
+            InciforScreen()
         }
     }
 }

@@ -16,9 +16,14 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.runtime.getValue
 import androidx.compose.foundation.lazy.items
 import com.example.scrollingtellingincifor.ui.screens.incifor.miniscreens.InciforMiniScreen0
+import com.example.scrollingtellingincifor.ui.screens.incifor.miniscreens.InciforMiniScreen1
+
+import com.example.scrollingtellingincifor.ui.screens.incifor.miniscreens.TestScreen0
+import com.example.scrollingtellingincifor.ui.screens.incifor.miniscreens.TestScreen1
 
 @Composable
-fun InciforScreen(listState: LazyListState) {
+fun InciforScreen() {
+//fun InciforScreen(listState: LazyListState) {
     val viewModel: InciforViewModel = viewModel()
     val uiState by viewModel.uiState.collectAsState()
 
@@ -35,17 +40,13 @@ fun InciforScreen(listState: LazyListState) {
         is MiniScreenState.Success -> {
             val screens = (uiState as MiniScreenState.Success).screens
             LazyColumn(
-                state = listState,
+                //state = listState,
                 modifier = Modifier.fillMaxSize()
             ) {
                 items(screens) { data ->
                     when (data.id) {
-                       0 -> InciforMiniScreen0(
-                            data,
-                            Modifier
-                                .fillMaxWidth()
-                                .fillParentMaxHeight()
-                        )
+                        0 -> TestScreen0(data,Modifier.fillMaxWidth().fillParentMaxHeight())
+                        1 -> TestScreen1(data,Modifier.fillMaxWidth().fillParentMaxHeight())
                         else -> Text("MiniScreen desconocida")
                     }
                 }
